@@ -27,6 +27,6 @@ ENV PATH="/usr/local/flutter/bin:/usr/local/flutter/bin/cache/dart-sdk/bin:${PAT
 #RUN apt-get install curl
 # Run flutter doctor
 #RUN flutter doctor
-RUN flutter pub get
+#RUN flutter pub get
 
 ENTRYPOINT ["/entrypoint.sh"]
