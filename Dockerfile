@@ -23,7 +23,8 @@ RUN git clone https://github.com/flutter/flutter.git /usr/local/flutter
 
 # Set flutter environment path
 ENV PATH="/usr/local/flutter/bin:/usr/local/flutter/bin/cache/dart-sdk/bin:${PATH}"
-
+# Get curl
+RUN sudo apt-get install curl
 # Run flutter doctor
 RUN flutter doctor
 RUN flutter pub get
