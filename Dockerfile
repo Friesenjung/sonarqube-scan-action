@@ -24,9 +24,14 @@ RUN git clone https://github.com/flutter/flutter.git /usr/local/flutter
 # Set flutter environment path
 ENV PATH="/usr/local/flutter/bin:/usr/local/flutter/bin/cache/dart-sdk/bin:${PATH}"
 # Get curl
-#RUN apt-get install curl
-# Run flutter doctor
-#RUN flutter doctor
-#RUN flutter pub get
+RUN git clone https://github.com/curl/curl.git /usr/local/curl
+RUN autoreconf -fi
+RUN /usr/local/curl/configure --with-openssl
+RUN cd /usr/local/curl
+RUN make 
+RUN cd
+#Run flutter doctor
+RUN flutter doctor
+RUN flutter pub get
 
 ENTRYPOINT ["/entrypoint.sh"]
